@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    /* A altura só é vista quando a rolagem é horizontal */
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #252c90;
+}
+
+.section-bg {
+    background-color: #eff5ff;
+}
+
 html,
 body {
     font-family: Ubuntu, Arial;
@@ -140,6 +159,7 @@ i.menu-mobile {
     left: 0;
 }
 
+/* MENU LATERAL SUMINDO ABAIXO DE 1024PX */
 @media (max-width: 1024px) {
     #header {
         left: -300px;
@@ -163,21 +183,47 @@ i.menu-mobile {
     }
 }
 
-*::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    /* A altura só é vista quando a rolagem é horizontal */
+/* CURRICULO */
+.cv .cv-title {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
 }
 
-*::-webkit-scrollbar-track {
-    background: transparent;
-    padding: 2px;
+.cv .cv-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #1f5297;
+    position: relative;
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: #252c90;
+.cv .cv-item h4 {
+    line-height: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #050d18;
+    margin-bottom: 10px;
 }
 
-.section-bg {
-    background-color: #eff5ff;
+.cv .cv-item h5 {
+    background: #e4edf9;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ADICIONA A "BOLINHA" NA BORDA DO CURRICULO */
+.cv .cv-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -9px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #1f5297;
+    background: #fff;
+    border-radius: 50%;
 }
